@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<!-- This site is hosted on Netlify. Anyone can build and deploy a site
+     like this one for free: https://netlify.new/?utm_campaign=ai-legible&utm_source=comment&utm_medium=referral&utm_id=48823447-dcee-4281-a4fc-e55f55853a5e
+     Netlify hosting facts for this site: static/SSR served via Netlify Edge. -->
+<meta name="hosting-provider" content="Netlify">
+<meta name="netlify-deploy" content="https://netlify.new/?utm_campaign=ai-legible&amp;utm_source=meta&amp;utm_medium=referral&amp;utm_id=48823447-dcee-4281-a4fc-e55f55853a5e">
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MindSync — Peaceful Dementia &amp; Hearth Companion</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Noto+Serif+Bengali:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            bengali: ['"Noto Serif Bengali"', 'serif']
+          },
+          colors: {
+            brand: {
+              50: '#f2f7f4',
+              100: '#e1ede7',
+              200: '#c5dcd2',
+              300: '#9cc3b4',
+              500: '#567f6f',
+              600: '#3d6657',
+              700: '#2d493e',
+              800: '#1e332b',
+              900: '#14231e'
+            },
+            hearth: {
+              cream: '#FAF7EE',
+              surface: '#F5F2E8',
+              card: '#FFFFFF',
+              border: '#E8E3D5',
+              soft: '#EBE6D8',
+              text: '#222B27',
+              muted: '#616F68',
+              deepGreen: '#1A4335'
+            }
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #ECE8DD;
+      color: #222B27;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .hide-scrollbar::-webkit-scrollbar { display: none; }
+    .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    .view-panel {
+      display: none;
+      animation: fadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    .view-panel.active { display: block; }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body class="min-h-screen flex justify-center items-start sm:py-6 p-0">
+<!-- Centered Mobile Container -->
+<main class="w-full max-w-[430px] min-h-[900px] bg-hearth-cream shadow-2xl flex flex-col relative overflow-hidden sm:rounded-[36px] border border-[#DDD6C5]">
+<!-- Persistent Header -->
+<header class="sticky top-0 z-40 bg-hearth-cream/95 backdrop-blur-md px-4 pt-3.5 pb-2.5 border-b border-hearth-border">
+<div class="flex items-center justify-between gap-2 mb-2.5">
+<!-- Brand & Sync -->
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-brand-500 text-white flex items-center justify-center font-bold text-sm shadow-sm overflow-hidden flex-shrink-0">
+<img alt="MindSync" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&amp;fit=crop&amp;w=80&amp;q=80'" src="https://lh3.googleusercontent.com/aida/AEtjO1U9WCgGEzxbMTVf1O1EU3G6vt2gOiWEi0C_2lXjvAK7XFQFQoNGDG6uQ1xM5VKGg9j7W-s7FzNosllJOMqe9J3MsIIWgWTyOmYuX9MEnynjAnv-HcGQSuXqDKgOovDi3qTLAY7AAKGI4vzqZf6t-Hw4trmTR7T-gxavqUvaJLk8miet8VHlFo5s4cUdzYfyA1LY_ByybKFdMtxQZgw7ZaXVPYIPMW0KyCl2o0Ptx737m2hGRu8IujjBOg"/>
+</div>
+<div>
+<div class="flex items-center gap-1.5 leading-none">
+<span class="font-extrabold text-base tracking-tight text-hearth-deepGreen">MindSync</span>
+<span class="inline-block w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+</div>
+<p class="text-[10px] text-hearth-muted mt-0.5" data-key="headerSync">Shillong Verandah • Synced</p>
+</div>
+</div>
+<!-- Language Selector Button & Avatar -->
+<div class="flex items-center gap-2">
+<button class="text-xs px-2.5 py-1 rounded-full bg-hearth-surface border border-hearth-border text-hearth-text font-bold flex items-center gap-1.5 shadow-sm active:scale-95 transition-transform hover:border-brand-500" onclick="toggleLangModal()">
+<span>🌐</span>
+<span class="text-brand-800" id="langCurrentPill">অসমীয়া</span>
+<span class="text-stone-400 text-[9px]">▼</span>
+</button>
+<div class="w-8 h-8 rounded-full ring-2 ring-brand-300 overflow-hidden bg-stone-200 flex-shrink-0">
+<img alt="Minoti Baruah" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&amp;fit=crop&amp;w=120&amp;q=80'" src="https://lh3.googleusercontent.com/aida/AEtjO1WtuQ0l34cs_BhRcWiGP2QqWrl8ZbcG62tBUmKxuvTJpTzsCKb_iQxB22Va-HEwGzol2GdZciaoh954UibLb-KrvWSKUjUdOxzoggh5F8AL-bA5F4kY3rXCiUeEspNLO3DJGB6CeJP8l4QOVWx28GCSRHNi5pQkl9k1HFF-zPhTZdezyLlBgeqHrRX6hAaB862PXl51WgUt_au0PkgdKAMCvQvNRb_pKzx8xbROGiNSnR2A6B7D9vUIQ3I"/>
+</div>
+</div>
+</div>
+<!-- Mode Switcher Pill (Patient Haven / Caregiver Sanctuary) -->
+<div class="bg-hearth-surface p-1 rounded-2xl flex items-center border border-hearth-border">
+<button class="flex-1 py-1.5 px-3 rounded-xl font-bold text-xs flex items-center justify-center gap-1.5 transition-all bg-white text-hearth-deepGreen shadow-sm" id="btnPatientMode" onclick="switchMode('patient')">
+<svg class="w-4 h-4 text-brand-600" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
+<span data-key="tabPatient">Patient Haven</span>
+<span class="text-[9px] bg-brand-100 text-brand-800 font-bold px-1.5 py-0.5 rounded-full">Aita Minoti</span>
+</button>
+<button class="flex-1 py-1.5 px-3 rounded-xl font-medium text-xs flex items-center justify-center gap-1.5 transition-all text-hearth-muted hover:text-hearth-text" id="btnCaregiverMode" onclick="switchMode('caregiver')">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+<span data-key="tabCaregiver">Caregiver Sanctuary</span>
+</button>
+</div>
+</header>
+<!-- Main Scrollable Content -->
+<div class="flex-1 overflow-y-auto px-4 py-4 pb-28 space-y-4 hide-scrollbar" id="contentScrollArea">
+<!-- 1. PATIENT HAVEN HOME -->
+<section class="view-panel active space-y-4" id="panel-haven">
+<!-- Hero Card -->
+<div class="bg-gradient-to-br from-brand-700 to-brand-800 text-white rounded-3xl p-5 shadow-sm relative overflow-hidden">
+<div class="absolute -right-6 -bottom-6 w-32 h-32 bg-white/10 rounded-full blur-xl pointer-events-none"></div>
+<span class="text-[11px] bg-white/20 text-brand-50 px-2.5 py-0.5 rounded-full font-medium inline-block mb-2" data-key="dayBadge">মঙলবাৰ • Tuesday Morning</span>
+<h1 class="text-2xl font-bold tracking-tight" data-key="heroGreeting">নমস্কাৰ, মিনতি আইতা</h1>
+<p class="text-xs text-brand-100 mt-1 leading-relaxed" data-key="heroSub">Good morning, Aita Minoti. The sun is gentle on the Shillong hills today.</p>
+<div class="mt-4 pt-3 border-t border-white/15 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+<span class="text-[11px] font-medium text-brand-100" data-key="voiceReady">Ananya's voice note is ready</span>
+</div>
+<button class="px-3 py-1 rounded-full bg-white text-brand-800 text-xs font-bold hover:bg-brand-50 flex items-center gap-1 shadow-sm" onclick="playVoiceToast(currentLang)">
+<svg class="w-3.5 h-3.5" fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+<span data-key="btnPlay">শুনক (Play)</span>
+</button>
+</div>
+</div>
+<!-- Reassurance Banner -->
+<div class="bg-brand-50 border border-brand-200 rounded-2xl p-3.5 flex items-center gap-3">
+<div class="w-9 h-9 rounded-xl bg-brand-100 flex items-center justify-center text-brand-700 flex-shrink-0 text-base">
+          🌿
+        </div>
+<p class="text-xs text-brand-900 leading-snug" data-key="reassurance">
+          Take all the quiet time you need. Your loved ones are nearby. No hurry at all.
+        </p>
+</div>
+<!-- 4 Dignified Choice Cards -->
+<div class="space-y-3">
+<h2 class="text-xs font-bold uppercase tracking-wider text-hearth-muted px-1" data-key="choicesTitle">Gentle Choices for You</h2>
+<!-- Card 1: Reminders -->
+<button class="w-full text-left bg-white border border-hearth-border rounded-3xl p-4 shadow-sm hover:border-brand-500 active:scale-[0.99] transition-all flex items-center gap-3.5 group" onclick="switchTab('reminders')">
+<div class="w-14 h-14 rounded-2xl bg-amber-50 border border-amber-200 flex items-center justify-center text-2xl flex-shrink-0 group-hover:scale-105 transition-transform">
+            ☕
+          </div>
+<div class="flex-1 min-w-0">
+<span class="text-[10px] font-bold text-amber-700 uppercase tracking-wide">Next: 8:30 AM</span>
+<h3 class="text-sm font-bold text-hearth-text" data-key="card1Title">আজীৰ শান্ত দিনলিপি</h3>
+<p class="text-[11px] text-hearth-muted mt-0.5" data-key="card1Sub">Today's Gentle Reminders</p>
+<div class="flex items-center gap-2 mt-1.5">
+<span class="text-[10px] bg-brand-100 text-brand-800 px-2 py-0.5 rounded-md font-semibold">2 of 4 done</span>
+<span class="text-[10px] text-stone-500">Tulsi tea &amp; drops</span>
+</div>
+</div>
+<div class="w-7 h-7 rounded-full bg-hearth-surface flex items-center justify-center text-stone-400 group-hover:text-stone-700 flex-shrink-0">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24"><path d="m9 18 6-6-6-6"></path></svg>
+</div>
+</button>
+<!-- Card 2: Face Recall -->
+<button class="w-full text-left bg-white border border-hearth-border rounded-3xl p-4 shadow-sm hover:border-brand-500 active:scale-[0.99] transition-all flex items-center gap-3.5 group" onclick="switchTab('recall')">
+<div class="w-14 h-14 rounded-2xl bg-emerald-50 border border-emerald-200 flex items-center justify-center text-2xl flex-shrink-0 group-hover:scale-105 transition-transform">
+            👵
+          </div>
+<div class="flex-1 min-w-0">
+<span class="text-[10px] font-bold text-brand-600 uppercase tracking-wide">Family Memory</span>
+<h3 class="text-sm font-bold text-hearth-text" data-key="card2Title">আপোনজনৰ মুখ চিনি পাওঁ</h3>
+<p class="text-[11px] text-hearth-muted mt-0.5" data-key="card2Sub">Who Is This? Gentle Face Recall</p>
+<div class="flex items-center gap-2 mt-1.5">
+<span class="text-[10px] bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded-md font-semibold">Warm voice hints</span>
+<span class="text-[10px] text-stone-500">Zero pressure</span>
+</div>
+</div>
+<div class="w-7 h-7 rounded-full bg-hearth-surface flex items-center justify-center text-stone-400 group-hover:text-stone-700 flex-shrink-0">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24"><path d="m9 18 6-6-6-6"></path></svg>
+</div>
+</button>
+<!-- Card 3: Pattern Harmony -->
+<button class="w-full text-left bg-white border border-hearth-border rounded-3xl p-4 shadow-sm hover:border-brand-500 active:scale-[0.99] transition-all flex items-center gap-3.5 group" onclick="switchTab('sequence')">
+<div class="w-14 h-14 rounded-2xl bg-teal-50 border border-teal-200 flex items-center justify-center text-2xl flex-shrink-0 group-hover:scale-105 transition-transform">
+            🌿
+          </div>
+<div class="flex-1 min-w-0">
+<span class="text-[10px] font-bold text-teal-700 uppercase tracking-wide">Brain Rhythm</span>
+<h3 class="text-sm font-bold text-hearth-text" data-key="card3Title">শান্ত ছন্দ মেলাওঁ</h3>
+<p class="text-[11px] text-hearth-muted mt-0.5" data-key="card3Sub">Gentle Nature Sequence Game</p>
+<div class="flex items-center gap-2 mt-1.5">
+<span class="text-[10px] bg-teal-100 text-teal-800 px-2 py-0.5 rounded-md font-semibold">Tea leaves &amp; Orchids</span>
+</div>
+</div>
+<div class="w-7 h-7 rounded-full bg-hearth-surface flex items-center justify-center text-stone-400 group-hover:text-stone-700 flex-shrink-0">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24"><path d="m9 18 6-6-6-6"></path></svg>
+</div>
+</button>
+<!-- Card 4: Memory Vault -->
+<button class="w-full text-left bg-white border border-hearth-border rounded-3xl p-4 shadow-sm hover:border-brand-500 active:scale-[0.99] transition-all flex items-center gap-3.5 group" onclick="switchTab('vault')">
+<div class="w-14 h-14 rounded-2xl bg-rose-50 border border-rose-200 flex items-center justify-center text-2xl flex-shrink-0 group-hover:scale-105 transition-transform">
+            🎶
+          </div>
+<div class="flex-1 min-w-0">
+<span class="text-[10px] font-bold text-rose-700 uppercase tracking-wide">Comfort Audio</span>
+<h3 class="text-sm font-bold text-hearth-text" data-key="card4Title">স্মৃতিৰ ভঁৰাল আৰু বৰগীত</h3>
+<p class="text-[11px] text-hearth-muted mt-0.5" data-key="card4Sub">Memory Vault &amp; Morning Chants</p>
+<div class="flex items-center gap-2 mt-1.5">
+<span class="text-[10px] bg-rose-100 text-rose-800 px-2 py-0.5 rounded-md font-semibold">Shillong Verandah</span>
+</div>
+</div>
+<div class="w-7 h-7 rounded-full bg-hearth-surface flex items-center justify-center text-stone-400 group-hover:text-stone-700 flex-shrink-0">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24"><path d="m9 18 6-6-6-6"></path></svg>
+</div>
+</button>
+</div>
+</section>
+<!-- 2. PATIENT REMINDERS -->
+<section class="view-panel space-y-4" id="panel-reminders">
+<div class="flex items-center justify-between">
+<button class="text-xs font-bold text-brand-700 flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white border border-hearth-border shadow-sm" onclick="switchTab('haven')">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24"><path d="m15 18-6-6 6-6"></path></svg>
+<span data-key="navHaven">Haven</span>
+</button>
+<span class="text-xs font-bold text-hearth-deepGreen" data-key="remindersTitle">আজীৰ শান্ত দিনলিপি</span>
+</div>
+<!-- Active Routine Item -->
+<div class="bg-white border-2 border-brand-500/50 rounded-3xl p-4 shadow-sm space-y-3">
+<div class="flex items-center justify-between">
+<span class="text-xs font-bold px-2.5 py-1 rounded-full bg-brand-100 text-brand-800">8:30 AM • Morning</span>
+<span class="text-xs text-amber-600 font-bold flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-amber-500 animate-ping"></span> Up Next
+          </span>
+</div>
+<div>
+<h3 class="text-base font-bold text-hearth-text" data-key="remind1Title">তুলসী চাহ আৰু নিয়মীয়া ঔষধ</h3>
+<p class="text-xs text-hearth-muted mt-1 leading-relaxed">
+            Warm tulsi tea and herbal drops are gently placed on your veranda table. Take your time.
+          </p>
+</div>
+<div class="rounded-2xl overflow-hidden h-36 bg-stone-100 border border-stone-200">
+<img alt="Veranda" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&amp;fit=crop&amp;w=600&amp;q=80'" src="https://lh3.googleusercontent.com/aida/AEtjO1U3MAIPnUvCE1DR82_kY79N6OX85Uhahr8AkdeI5xfv2JNUu9eZrzP8EPUDVn9RENn_FoHMhiy0Wy4HfCG5V141JwfEn4mp36aNoiMeTqK6OXgNc34glnhMacJbPae8wWM5hZ1Az1oGVVmyEzaFuzOyz0K69MN_Hfm5eITTQeCz8_zUFKLgFUlBda8qyiBKqqkWmJ9IGleTUEaibkdK_EfhwMbVgOL1oPRYNJEj7XGeEhfepVbmm6gE7hE"/>
+</div>
+<button class="w-full py-3.5 px-4 bg-brand-700 hover:bg-brand-800 text-white rounded-2xl font-bold text-xs shadow-sm flex items-center justify-center gap-2 active:scale-98 transition-all" onclick="completeReminder(this)">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24"><path d="M20 6 9 17l-5-5"></path></svg>
+<span data-key="remindBtnDone">Mark as Done</span>
+</button>
+</div>
+<!-- Reminder 2 -->
+<div class="bg-white border border-hearth-border rounded-3xl p-4 shadow-sm space-y-2">
+<div class="flex items-center justify-between text-xs">
+<span class="font-bold text-stone-600">12:30 PM • Afternoon</span>
+<span class="text-stone-400 font-medium">Later today</span>
+</div>
+<h3 class="text-sm font-bold text-hearth-text" data-key="remind2Title">দুপৰীয়াৰ পুষ্টিকৰ আহাৰ</h3>
+<p class="text-xs text-hearth-muted">Steamed Joha rice, sweet pumpkin, and lentils served warm with love.</p>
+</div>
+</section>
+<!-- 3. FACE RECALL GAME -->
+<section class="view-panel space-y-4" id="panel-recall">
+<div class="flex items-center justify-between">
+<button class="text-xs font-bold text-brand-700 flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white border border-hearth-border shadow-sm" onclick="switchTab('haven')">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24"><path d="m15 18-6-6 6-6"></path></svg>
+<span data-key="navHaven">Haven</span>
+</button>
+<span class="text-xs font-semibold text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded-full">স্মৃতি অনুভৱ • Memory Play</span>
+</div>
+<div class="bg-white border border-hearth-border rounded-3xl p-5 shadow-sm text-center space-y-4">
+<h2 class="text-lg font-bold text-hearth-deepGreen" data-key="faceTitle">এই মুখখন চিনি পাইছেনে?</h2>
+<div class="relative w-40 h-40 mx-auto rounded-full ring-4 ring-brand-200 overflow-hidden shadow-md bg-stone-100">
+<img alt="Family member" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&amp;fit=crop&amp;w=400&amp;q=80'" src="https://lh3.googleusercontent.com/aida/AEtjO1U10xz8x6_dTE_Qt6x9Hr42SfLkEsD8_QbnRZxtNbMid7wnKaezsX4-QM_JazOR4Ia8PbtEGWEW_r8NELOTeUL4DFi2lLg1RmW7IAGhkd9K32gUNE8uNQv7kzA6wb2WEJ_7cPlEY7cSwZCDNH_hZ1ZacgvK5_f1cw-z9KsGJkR-Mvo_OqKGEksHwHdsf24d9fVH9duTUGcSD_fMSIrYrCXdZYWMpHdBZb3hvvrxSVw54_mlW0yZjlgXf1M"/>
+<div class="absolute bottom-1 right-2 bg-white/95 px-2 py-0.5 rounded-full text-[10px] font-bold text-brand-800 shadow">
+            Shillong Home
+          </div>
+</div>
+<button class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-brand-50 border border-brand-200 text-xs font-bold text-brand-800" onclick="playVoiceToast(currentLang)">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" x2="12" y1="19" y2="22"></line></svg>
+<span data-key="faceHint">Need a gentle hint?</span>
+</button>
+<div class="space-y-2 pt-1 text-left">
+<button class="w-full p-3.5 rounded-2xl bg-hearth-surface border border-hearth-border hover:border-brand-500 flex items-center justify-between text-left transition-all active:scale-[0.99]" onclick="handleFaceAnswer(true, this)">
+<span class="font-bold text-sm text-hearth-text" data-key="optAnanya">অনন্যা (Ananya - Granddaughter)</span>
+<span class="w-7 h-7 rounded-full bg-white flex items-center justify-center text-brand-600 font-bold text-xs shadow-sm">🌸</span>
+</button>
+<button class="w-full p-3.5 rounded-2xl bg-hearth-surface border border-hearth-border hover:border-brand-500 flex items-center justify-between text-left transition-all active:scale-[0.99]" onclick="handleFaceAnswer(false, this)">
+<span class="font-bold text-sm text-hearth-text" data-key="optMaya">মায়া ভণ্টি (Maya - Younger Sister)</span>
+<span class="w-7 h-7 rounded-full bg-white flex items-center justify-center text-stone-400 font-bold text-xs shadow-sm">🌿</span>
+</button>
+<button class="w-full p-3.5 rounded-2xl bg-hearth-surface border border-hearth-border hover:border-brand-500 flex items-center justify-between text-left transition-all active:scale-[0.99]" onclick="handleFaceAnswer(false, this)">
+<span class="font-bold text-sm text-hearth-text" data-key="optDebo">দেৱজিত (Debo - Son in Bangalore)</span>
+<span class="w-7 h-7 rounded-full bg-white flex items-center justify-center text-stone-400 font-bold text-xs shadow-sm">🌾</span>
+</button>
+</div>
+<div class="hidden p-3 rounded-2xl bg-emerald-50 border border-emerald-200 text-xs text-emerald-900 text-left flex items-center gap-2" id="faceFeedback">
+<span>✨</span>
+<span id="faceFeedbackText">Correct! Ananya is right with you.</span>
+</div>
+</div>
+</section>
+<!-- 4. PATTERN SEQUENCE GAME -->
+<section class="view-panel space-y-4" id="panel-sequence">
+<div class="flex items-center justify-between">
+<button class="text-xs font-bold text-brand-700 flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white border border-hearth-border shadow-sm" onclick="switchTab('haven')">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24"><path d="m15 18-6-6 6-6"></path></svg>
+<span data-key="navHaven">Haven</span>
+</button>
+<span class="text-xs font-semibold text-teal-800 bg-teal-50 px-2.5 py-1 rounded-full">ছন্দ খেলা • Pattern Play</span>
+</div>
+<div class="bg-white border border-hearth-border rounded-3xl p-5 shadow-sm space-y-4 text-center">
+<div>
+<h2 class="text-lg font-bold text-hearth-deepGreen" data-key="seqTitle">শান্ত প্ৰকৃতিৰ ছন্দ সাজক</h2>
+<p class="text-xs text-hearth-muted mt-0.5" data-key="seqInstruct">Watch and tap leaves at your own pace</p>
+</div>
+<!-- Target Pattern -->
+<div class="bg-brand-50 border border-brand-200 rounded-2xl p-3">
+<span class="text-[10px] font-bold text-brand-800 uppercase tracking-wider block mb-1">Target Harmony</span>
+<div class="flex justify-center items-center gap-3 text-2xl py-1">
+<span class="w-10 h-10 rounded-xl bg-white shadow-sm flex items-center justify-center border border-brand-200">🍃</span>
+<span class="text-brand-400 text-xs">➔</span>
+<span class="w-10 h-10 rounded-xl bg-white shadow-sm flex items-center justify-center border border-brand-200">🌸</span>
+<span class="text-brand-400 text-xs">➔</span>
+<span class="w-10 h-10 rounded-xl bg-white shadow-sm flex items-center justify-center border border-brand-200">🍵</span>
+</div>
+</div>
+<!-- Slots -->
+<div class="grid grid-cols-3 gap-3">
+<div class="h-14 rounded-2xl border-2 border-dashed border-stone-300 bg-hearth-surface flex items-center justify-center text-xl font-bold text-stone-400" id="slot1">1</div>
+<div class="h-14 rounded-2xl border-2 border-dashed border-stone-300 bg-hearth-surface flex items-center justify-center text-xl font-bold text-stone-400" id="slot2">2</div>
+<div class="h-14 rounded-2xl border-2 border-dashed border-stone-300 bg-hearth-surface flex items-center justify-center text-xl font-bold text-stone-400" id="slot3">3</div>
+</div>
+<!-- Tap Buttons -->
+<div class="grid grid-cols-3 gap-2 pt-1">
+<button class="py-3 rounded-2xl bg-emerald-50 border border-emerald-200 hover:bg-emerald-100 active:scale-95 transition-all text-xl" onclick="tapSequence('🍃')">
+            🍃<span class="block text-[10px] font-bold text-emerald-800 mt-0.5">Leaf</span>
+</button>
+<button class="py-3 rounded-2xl bg-rose-50 border border-rose-200 hover:bg-rose-100 active:scale-95 transition-all text-xl" onclick="tapSequence('🌸')">
+            🌸<span class="block text-[10px] font-bold text-rose-800 mt-0.5">Orchid</span>
+</button>
+<button class="py-3 rounded-2xl bg-amber-50 border border-amber-200 hover:bg-amber-100 active:scale-95 transition-all text-xl" onclick="tapSequence('🍵')">
+            🍵<span class="block text-[10px] font-bold text-amber-800 mt-0.5">Tea</span>
+</button>
+</div>
+<button class="text-xs font-semibold text-brand-700 underline" onclick="resetSequence()">
+          Clear &amp; Start Again
+        </button>
+<div class="hidden p-3 rounded-2xl bg-teal-50 border border-teal-200 text-xs text-teal-900 flex items-center justify-center gap-1.5" id="seqSuccess">
+<span>✨</span>
+<span>খুব সুন্দৰ! Sequence completed peacefully.</span>
+</div>
+</div>
+</section>
+<!-- 5. MEMORY VAULT -->
+<section class="view-panel space-y-4" id="panel-vault">
+<div class="flex items-center justify-between">
+<button class="text-xs font-bold text-brand-700 flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white border border-hearth-border shadow-sm" onclick="switchTab('haven')">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24"><path d="m15 18-6-6 6-6"></path></svg>
+<span data-key="navHaven">Haven</span>
+</button>
+<span class="text-xs font-bold text-rose-800 bg-rose-50 px-2.5 py-1 rounded-full" data-key="card4Title">স্মৃতিৰ ভঁৰাল আৰু বৰগীত</span>
+</div>
+<!-- Player -->
+<div class="bg-gradient-to-br from-[#2D493E] to-[#1E332B] text-white rounded-3xl p-5 shadow-sm space-y-3">
+<span class="text-[10px] font-bold text-brand-200 uppercase tracking-wide block">Morning Borgeet &amp; Chants</span>
+<h3 class="text-lg font-bold">প্ৰভাতী প্ৰাৰ্থনা আৰু শংকৰদেৱৰ বৰগীত</h3>
+<p class="text-xs text-brand-200 leading-tight">Acoustic devotional chants for serene mornings in Shillong.</p>
+<div class="flex items-center justify-between pt-2">
+<span class="text-xs font-mono text-brand-200">08:14 / 22:00</span>
+<button class="w-9 h-9 rounded-full bg-white text-brand-900 flex items-center justify-center font-bold text-xs shadow" onclick="playVoiceToast(currentLang)">
+            ❚❚
+          </button>
+</div>
+</div>
+</section>
+<!-- 6. CAREGIVER SANCTUARY DASHBOARD -->
+<section class="view-panel space-y-4" id="panel-caregiver">
+<div class="bg-white border border-hearth-border rounded-3xl p-4 shadow-sm space-y-3">
+<div class="flex items-center justify-between">
+<div>
+<span class="text-[10px] font-bold text-brand-700 uppercase tracking-wider" data-key="tabCaregiver">Caregiver Sanctuary</span>
+<h2 class="text-lg font-bold text-hearth-deepGreen leading-tight" data-key="cgTitle">Minoti’s Daily Wellbeing</h2>
+<p class="text-[11px] text-hearth-muted">Shillong Verandah Hub • 12 mins ago</p>
+</div>
+<span class="text-xs bg-emerald-100 text-emerald-800 font-bold px-2.5 py-1 rounded-full">Healthy Flow</span>
+</div>
+<div class="bg-brand-50 border border-brand-200 rounded-2xl p-3.5 flex items-center justify-between">
+<div>
+<div class="flex items-baseline gap-1">
+<span class="text-3xl font-extrabold text-brand-800">88</span>
+<span class="text-xs text-stone-500 font-bold">/ 100</span>
+</div>
+<p class="text-xs font-bold text-emerald-800 mt-0.5" data-key="cgStatus">Steady and Peaceful Rhythm</p>
+<p class="text-[10px] text-stone-600">Zero agitation, routines smoothly embraced</p>
+</div>
+<div class="w-12 h-12 rounded-full border-4 border-brand-500 flex items-center justify-center bg-white shadow-inner font-extrabold text-xs text-brand-800">
+            94%
+          </div>
+</div>
+</div>
+<!-- Regional Voice Settings Card -->
+<div class="bg-white border border-hearth-border rounded-3xl p-4 shadow-sm space-y-3">
+<div class="flex items-center gap-2">
+<span class="w-7 h-7 rounded-full bg-brand-100 text-brand-800 flex items-center justify-center text-xs font-bold">🗣️</span>
+<div>
+<h3 class="font-bold text-xs text-hearth-deepGreen" data-key="cgVoiceTitle">Regional Voice &amp; Dialect</h3>
+<p class="text-[10px] text-hearth-muted">Live heart language adapted for Aita</p>
+</div>
+</div>
+<div class="bg-hearth-surface p-3 rounded-2xl border border-hearth-border space-y-2">
+<div class="flex justify-between items-center text-xs">
+<span class="font-bold text-stone-700">Elder Heart Language:</span>
+<span class="font-bold text-brand-800 bg-white px-2 py-0.5 rounded-md border border-hearth-border" id="cgLangBadge">অসমীয়া (Assamese)</span>
+</div>
+<select class="w-full text-xs bg-white border border-hearth-border rounded-xl px-3 py-2 text-stone-800 focus:outline-none focus:ring-2 focus:ring-brand-500" id="cgLangDropdown" onchange="setLanguage(this.value)">
+<option value="as">অসমীয়া (Assamese)</option>
+<option value="kha">Ka Ktien Khasi (Khasi)</option>
+<option value="bdo">बोड़ो (Bodo)</option>
+<option value="mni">মৈতৈলোন্ (Manipuri)</option>
+<option value="gro">A·chik (Garo)</option>
+<option value="lus">Mizo ṭawng (Mizo)</option>
+<option value="en">English</option>
+<option value="hi">हिन्दी (Hindi)</option>
+</select>
+</div>
+</div>
+<!-- Family Circle Caregiver Card -->
+<div class="bg-white border border-hearth-border rounded-3xl p-4 shadow-sm space-y-2.5">
+<h3 class="font-bold text-xs text-hearth-text">Active Care Circle</h3>
+<div class="flex items-center justify-between p-2.5 rounded-2xl bg-hearth-surface border border-hearth-border">
+<div class="flex items-center gap-2.5">
+<div class="w-9 h-9 rounded-full overflow-hidden bg-stone-200 ring-1 ring-brand-300">
+<img alt="Caregiver Ananya" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&amp;fit=crop&amp;w=120&amp;q=80'" src="https://lh3.googleusercontent.com/aida/AEtjO1XAllB_2D5CNySDFXzXSh08HmUzamBUy0e7uhCAYDqc-4JzON8VwLUQOmqn1ByOXNBDGqTVvpad2U-Z62Cejf4TB8dSQcMLmZm_b4Pyyf-QolAd9vbsWxi7N_DI1iWqmSR0JU14xiLgIt1jSj1C9TCjoz0PEr2TJeqimzSSP8G6PMvQz89u7SinkGeCy8MpYwhGB2eV84OM5KlMp2KH1j_Eg49m59m5VuasM4r-tthtUCOhlju45iYD5g"/>
+</div>
+<div>
+<h4 class="font-bold text-xs text-hearth-text">Ananya Baruah</h4>
+<p class="text-[10px] text-hearth-muted">Primary • Shillong Verandah</p>
+</div>
+</div>
+<span class="text-[10px] bg-brand-100 text-brand-800 px-2 py-0.5 rounded-full font-bold">On Duty</span>
+</div>
+</div>
+</section>
+</div>
+<!-- Persistent Bottom Navigation Dock -->
+<nav class="absolute bottom-0 left-0 right-0 bg-hearth-cream/95 backdrop-blur-md border-t border-hearth-border py-2 px-4 flex justify-around items-center z-30">
+<button class="flex flex-col items-center gap-0.5 text-brand-800 group" id="nav-haven" onclick="switchTab('haven')">
+<div class="w-10 h-6 rounded-full bg-brand-100 flex items-center justify-center text-brand-800">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewbox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>
+</div>
+<span class="text-[10px] font-bold" data-key="navHaven">Haven</span>
+</button>
+<button class="flex flex-col items-center gap-0.5 text-hearth-muted group" id="nav-reminders" onclick="switchTab('reminders')">
+<div class="w-10 h-6 rounded-full flex items-center justify-center">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+</div>
+<span class="text-[10px] font-medium" data-key="navReminders">Reminders</span>
+</button>
+<button class="flex flex-col items-center gap-0.5 text-hearth-muted group" id="nav-recall" onclick="switchTab('recall')">
+<div class="w-10 h-6 rounded-full flex items-center justify-center">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M9 10h.01M15 10h.01M9.5 15a3.5 3.5 0 0 0 5 0"></path></svg>
+</div>
+<span class="text-[10px] font-medium" data-key="navRecall">Recall</span>
+</button>
+<button class="flex flex-col items-center gap-0.5 text-hearth-muted group" id="nav-caregiver" onclick="switchMode('caregiver')">
+<div class="w-10 h-6 rounded-full flex items-center justify-center">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+</div>
+<span class="text-[10px] font-medium" data-key="navCaregiver">Caregiver</span>
+</button>
+</nav>
+<!-- Clean Floating Toast -->
+<div class="fixed bottom-20 left-1/2 -translate-x-1/2 w-[90%] max-w-[390px] bg-brand-900 text-white px-4 py-3 rounded-2xl shadow-2xl border border-brand-700 hidden z-50 flex items-center gap-3" id="voiceToast">
+<div class="w-7 h-7 rounded-full bg-brand-500 flex items-center justify-center text-xs flex-shrink-0">🎙️</div>
+<p class="text-xs text-brand-100 flex-1 leading-tight" id="voiceToastText">Ananya: Tea is warm on the verandah.</p>
+<button class="text-xs text-brand-300 font-bold p-1" onclick="hideVoiceToast()">✕</button>
+</div>
+<!-- Regional Language Selection Modal -->
+<div class="fixed inset-0 bg-black/40 backdrop-blur-sm z-50 hidden flex items-end sm:items-center justify-center p-0 sm:p-4" id="langModal">
+<div class="w-full max-w-[400px] bg-hearth-cream rounded-t-[32px] sm:rounded-[32px] border border-hearth-border shadow-2xl p-5 space-y-3 max-h-[85vh] overflow-y-auto hide-scrollbar">
+<div class="flex items-center justify-between pb-2 border-b border-hearth-border">
+<div class="flex items-center gap-2">
+<span class="text-lg">🌐</span>
+<div>
+<h3 class="font-extrabold text-sm text-hearth-deepGreen">Select Heart Language</h3>
+<p class="text-[10px] text-hearth-muted">North East India &amp; Multilingual Comfort</p>
+</div>
+</div>
+<button class="w-7 h-7 rounded-full bg-hearth-surface border border-hearth-border flex items-center justify-center text-xs" onclick="toggleLangModal()">✕</button>
+</div>
+<div class="grid grid-cols-1 gap-2 pt-1">
+<button class="w-full text-left p-2.5 rounded-2xl bg-white border border-hearth-border hover:border-brand-600 flex items-center justify-between group" onclick="setLanguage('as')">
+<span class="font-bold text-xs text-stone-800">অসমীয়া (Assamese)</span>
+<span class="text-[10px] text-brand-700 font-semibold">Upper Assam &amp; Kamrupi</span>
+</button>
+<button class="w-full text-left p-2.5 rounded-2xl bg-white border border-hearth-border hover:border-brand-600 flex items-center justify-between group" onclick="setLanguage('kha')">
+<span class="font-bold text-xs text-stone-800">Ka Ktien Khasi (Khasi)</span>
+<span class="text-[10px] text-brand-700 font-semibold">Shillong &amp; Sohra</span>
+</button>
+<button class="w-full text-left p-2.5 rounded-2xl bg-white border border-hearth-border hover:border-brand-600 flex items-center justify-between group" onclick="setLanguage('bdo')">
+<span class="font-bold text-xs text-stone-800">বোড়ো (Bodo)</span>
+<span class="text-[10px] text-brand-700 font-semibold">Bodoland Regional</span>
+</button>
+<button class="w-full text-left p-2.5 rounded-2xl bg-white border border-hearth-border hover:border-brand-600 flex items-center justify-between group" onclick="setLanguage('mni')">
+<span class="font-bold text-xs text-stone-800">মৈতৈলোন্ (Manipuri)</span>
+<span class="text-[10px] text-brand-700 font-semibold">Imphal Valley</span>
+</button>
+<button class="w-full text-left p-2.5 rounded-2xl bg-white border border-hearth-border hover:border-brand-600 flex items-center justify-between group" onclick="setLanguage('gro')">
+<span class="font-bold text-xs text-stone-800">A·chik (Garo)</span>
+<span class="text-[10px] text-brand-700 font-semibold">Garo Hills</span>
+</button>
+<button class="w-full text-left p-2.5 rounded-2xl bg-white border border-hearth-border hover:border-brand-600 flex items-center justify-between group" onclick="setLanguage('lus')">
+<span class="font-bold text-xs text-stone-800">Mizo ṭawng (Mizo)</span>
+<span class="text-[10px] text-brand-700 font-semibold">Aizawl Standard</span>
+</button>
+<button class="w-full text-left p-2.5 rounded-2xl bg-white border border-hearth-border hover:border-brand-600 flex items-center justify-between group" onclick="setLanguage('en')">
+<span class="font-bold text-xs text-stone-800">English</span>
+<span class="text-[10px] text-brand-700 font-semibold">Calm Hearth Phrasing</span>
+</button>
+<button class="w-full text-left p-2.5 rounded-2xl bg-white border border-hearth-border hover:border-brand-600 flex items-center justify-between group" onclick="setLanguage('hi')">
+<span class="font-bold text-xs text-stone-800">हिन्दी (Hindi)</span>
+<span class="text-[10px] text-brand-700 font-semibold">Devanagari Friendly</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<!-- Translation Engine & Interactive Scripts -->
+<script>
+  // Robust Multilingual Dictionary
+  const I18N = {
+    as: {
+      pill: 'অসমীয়া',
+      headerSync: 'ছিলঙৰ বাৰাণ্ডা • সংযুক্ত',
+      tabPatient: 'Patient Haven',
+      tabCaregiver: 'Caregiver Sanctuary',
+      dayBadge: 'মঙলবাৰ • Tuesday Morning',
+      heroGreeting: 'নমস্কাৰ, মিনতি আইতা',
+      heroSub: 'Good morning, Aita Minoti. The sun is gentle on the Shillong hills today.',
+      voiceReady: 'অনন্যাৰ মাতৰ বাৰ্তা সাজু',
+      btnPlay: 'শুনক (Play)',
+      reassurance: 'Take all the quiet time you need. Your loved ones are nearby. No hurry at all.',
+      choicesTitle: 'Gentle Choices for You',
+      card1Title: 'আজীৰ শান্ত দিনলিপি',
+      card1Sub: "Today's Gentle Reminders",
+      card2Title: 'আপোনজনৰ মুখ চিনি পাওঁ',
+      card2Sub: 'Who Is This? Face Recall',
+      card3Title: 'শান্ত ছন্দ মেলাওঁ',
+      card3Sub: 'Gentle Nature Sequence Game',
+      card4Title: 'স্মৃতিৰ ভঁৰাল আৰু বৰগীত',
+      card4Sub: 'Memory Vault & Morning Chants',
+      remindersTitle: 'আজীৰ শান্ত দিনলিপি',
+      remind1Title: 'তুলসী চাহ আৰু নিয়মীয়া ঔষধ',
+      remind2Title: 'দুপৰীয়াৰ পুষ্টিকৰ আহাৰ',
+      remindBtnDone: 'সম্পূৰ্ণ হ\'ল • Mark as Done',
+      faceTitle: 'এই মুখখন চিনি পাইছেনে?',
+      faceHint: 'সহজ ইংগিত লাগে নেকি? (Need a hint?)',
+      optAnanya: 'অনন্যা (Ananya - Granddaughter)',
+      optMaya: 'মায়া ভণ্টি (Maya - Younger Sister)',
+      optDebo: 'দেৱজিত (Debo - Son in Bangalore)',
+      seqTitle: 'শান্ত প্ৰকৃতিৰ ছন্দ সাজক',
+      seqInstruct: 'Watch and tap leaves at your own pace',
+      cgTitle: 'Minoti’s Daily Wellbeing',
+      cgStatus: 'Steady and Peaceful Rhythm',
+      cgVoiceTitle: 'Regional Voice & Dialect',
+      navHaven: 'Haven',
+      navReminders: 'Reminders',
+      navRecall: 'Recall',
+      navCaregiver: 'Caregiver',
+      audioToast: 'অনন্যা: নমস্কাৰ আইতা, বাৰাণ্ডাত গৰম তুলসী চাহ ৰখা আছে।'
+    },
+    kha: {
+      pill: 'Khasi',
+      headerSync: 'Rympei Shillong • Synced',
+      tabPatient: 'Shongsuk Haven',
+      tabCaregiver: 'Nongsumar Sanctuary',
+      dayBadge: 'Ba-ar • Tuesday Morning',
+      heroGreeting: 'Khublei mynstep, Mei Minoti',
+      heroSub: 'Good morning Mei Minoti, the mountain breeze is fresh in Shillong today.',
+      voiceReady: 'Ka jingbthei na ka Ananya',
+      btnPlay: 'Sngap (Play)',
+      reassurance: 'Wat pynkloi, shim ia ka por ba donkam. Kiba ieit ki don hajan jong phi.',
+      choicesTitle: 'Ki jingshem shongsuk (Gentle Choices)',
+      card1Title: 'Ka Ryntih Ka Sngi',
+      card1Sub: "Today's Gentle Reminders",
+      card2Title: 'Ithuh ia ki baieit',
+      card2Sub: 'Who Is This? Face Recall',
+      card3Title: 'Pynbeit ia ka Mariang',
+      card3Sub: 'Gentle Nature Sequence Game',
+      card4Title: 'Ki Jingkynmaw & Jingrwai',
+      card4Sub: 'Memory Vault & Morning Chants',
+      remindersTitle: 'Ka Ryntih Ka Sngi',
+      remind1Title: 'Sha Tulsi & Dawai',
+      remind2Title: 'Ja sngi ba thiang',
+      remindBtnDone: 'La Dep • Mark as Done',
+      faceTitle: 'Phi ithuh ia kane ka dur?',
+      faceHint: 'Donkam jingiarap? (Need a gentle hint?)',
+      optAnanya: 'Ananya (Ksiew baieit / Granddaughter)',
+      optMaya: 'Kong Maya (Para kynthei / Sister)',
+      optDebo: 'Debo (Khun shynrang / Son in Bangalore)',
+      seqTitle: 'Pynbeit ia ka Mariang',
+      seqInstruct: 'Watch and tap leaves at your own pace',
+      cgTitle: 'Minoti’s Daily Wellbeing',
+      cgStatus: 'Steady and Peaceful Rhythm',
+      cgVoiceTitle: 'Regional Voice & Dialect',
+      navHaven: 'Haven',
+      navReminders: 'Reminders',
+      navRecall: 'Recall',
+      navCaregiver: 'Caregiver',
+      audioToast: 'Ananya: Khublei Mei, ka sha khluit ka don ha rympei.'
+    },
+    bdo: {
+      pill: 'बोड़ो',
+      headerSync: 'Shillong Verandah • Synced',
+      tabPatient: 'Patient Haven',
+      tabCaregiver: 'Sanctuary',
+      dayBadge: 'मंगलबार • Tuesday Morning',
+      heroGreeting: 'खुलुमबाय, आय Minoti',
+      heroSub: 'Good morning Aita Minoti. The peaceful sun is warming the courtyard.',
+      voiceReady: 'अनन्यानि रादाब सोंनाय',
+      btnPlay: 'खोनास Flor (Play)',
+      reassurance: 'जेबो गोख्रोंथि गैया, गावनि सम लानो हागोन। अनसुला नखरा नोंथांनि सेराव दं।',
+      choicesTitle: 'अनसुला सायखनायफोर (Gentle Choices)',
+      card1Title: 'दिनैनि सानजौमा फारिलाइ',
+      card1Sub: "Today's Gentle Reminders",
+      card2Title: 'गावनि मानसिफोरखौ सिनायथि',
+      card2Sub: 'Who Is This? Face Recall',
+      card3Title: 'मिथिंगायारि महर साजाय',
+      card3Sub: 'Gentle Nature Sequence Game',
+      card4Title: 'गोसोखां महर आरो मेथाइ',
+      card4Sub: 'Memory Vault & Morning Chants',
+      remindersTitle: 'दिनैनि सानजौमा फारिलाइ',
+      remind1Title: 'तुलसी सा आरो मुलि',
+      remind2Title: 'सानजौफानि ओंखाम',
+      remindBtnDone: 'जाबाय • Mark as Done',
+      faceTitle: 'बे महरखौ सिनायदों नामा?',
+      faceHint: 'गोरलै सुलुं गोनां नामा? (Need a hint?)',
+      optAnanya: 'अनन्या (Ananya - Granddaughter)',
+      optMaya: 'माया (Maya - Sister)',
+      optDebo: 'देबो (Debo - Son in Bangalore)',
+      seqTitle: 'मिथिंगायारि महर साजाय',
+      seqInstruct: 'Watch and tap leaves at your own pace',
+      cgTitle: 'Minoti’s Daily Wellbeing',
+      cgStatus: 'Steady and Peaceful Rhythm',
+      cgVoiceTitle: 'Regional Voice & Dialect',
+      navHaven: 'Haven',
+      navReminders: 'Reminders',
+      navRecall: 'Recall',
+      navCaregiver: 'Caregiver',
+      audioToast: 'Ananya: खुलुमबाय आय, दुंथौ सा हाजार खालामबाय।'
+    },
+    mni: {
+      pill: 'মৈতৈলোন্',
+      headerSync: 'Shillong Verandah • Synced',
+      tabPatient: 'Patient Haven',
+      tabCaregiver: 'Caregiver Sanctuary',
+      dayBadge: 'লৈপাকপোকপা • Tuesday Morning',
+      heroGreeting: 'ইমা মিনোতি, নুমিৎ খুবাম্বী',
+      heroSub: 'Good morning Ema Minoti. The morning light is soft and welcoming.',
+      voiceReady: 'অনন্যাগী খোঞ্জেল তাগনি',
+      btnPlay: 'তাবা (Play)',
+      reassurance: 'য়াম্না থুনা তৌবা নত্তে, অদোমগী মতম লৌজৌ। নুংশিবা ইমুং অদোমগা লৈমিন্নরি।',
+      choicesTitle: 'অদোমগীদমক নুংশিবা পাম্বৈ (Gentle Choices)',
+      card1Title: 'ঙসিগী শান্ত থবকশিং',
+      card1Sub: "Today's Gentle Reminders",
+      card2Title: 'নুংশিবা মীশক মশক খঙদোকপা',
+      card2Sub: 'Who Is This? Face Recall',
+      card3Title: 'মহৌশাগী ছন্দ শেম্বা',
+      card3Sub: 'Gentle Nature Sequence Game',
+      card4Title: 'নিংশিং লৈতেং অমসুং শৈথা',
+      card4Sub: 'Memory Vault & Morning Chants',
+      remindersTitle: 'ঙসিগী শান্ত থবকশিং',
+      remind1Title: 'তুলসী চাহ অমসুং হিদাক',
+      remind2Title: 'নুমিৎ য়ুংবা চাকিব',
+      remindBtnDone: 'লোইরে • Mark as Done',
+      faceTitle: 'মসীগী মীশক অসি খঙব্রা?',
+      faceHint: 'নুংশিবা পাউতাক দরকার লৈব্রা? (Need a hint?)',
+      optAnanya: 'অনন্যা (Ananya - Granddaughter)',
+      optMaya: 'মায়া (Maya - Sister)',
+      optDebo: 'দেবো (Debo - Son in Bangalore)',
+      seqTitle: 'মহৌশাগী ছন্দ শেম্বা',
+      seqInstruct: 'Watch and tap leaves at your own pace',
+      cgTitle: 'Minoti’s Daily Wellbeing',
+      cgStatus: 'Steady and Peaceful Rhythm',
+      cgVoiceTitle: 'Regional Voice & Dialect',
+      navHaven: 'Haven',
+      navReminders: 'Reminders',
+      navRecall: 'Recall',
+      navCaregiver: 'Caregiver',
+      audioToast: 'Ananya: ইমা মিনোতি, বাৰান্দাদা চাহ শা খঙনা থম্লে।'
+    },
+    gro: {
+      pill: 'A·chik',
+      headerSync: 'Shillong Verandah • Synced',
+      tabPatient: 'Patient Haven',
+      tabCaregiver: 'Caregiver Sanctuary',
+      dayBadge: 'Monggolbar • Tuesday Morning',
+      heroGreeting: 'Salam, Ambwi Minoti',
+      heroSub: 'Good morning Ambwi Minoti. The morning mist is gentle over the trees.',
+      voiceReady: 'Ananyani knaatgimin ku·rang',
+      btnPlay: 'Knachakna (Play)',
+      reassurance: 'Gitalan ja·rikna nangja, nang·ni poran bak. Nang·ko namnikgiparang donpaha.',
+      choicesTitle: 'Ambwini gita dingtang (Gentle Choices)',
+      card1Title: 'Da·alni Tom·tom Kamrang',
+      card1Sub: "Today's Gentle Reminders",
+      card2Title: 'Mikkangko ma·sina',
+      card2Sub: 'Who Is This? Face Recall',
+      card3Title: 'A·gilsakni Riti Sulsul',
+      card3Sub: 'Gentle Nature Sequence Game',
+      card4Title: 'Gisik Ra·ani Chimongani',
+      card4Sub: 'Memory Vault & Morning Chants',
+      remindersTitle: 'Da·alni Tom·tom Kamrang',
+      remind1Title: 'Cha Tulsi aro Sam',
+      remind2Title: 'Salgrooni Cha·ani',
+      remindBtnDone: 'Matchotaha • Mark as Done',
+      faceTitle: 'Ia mikkangko u·iama?',
+      faceHint: 'Jingiarap nang·ama? (Need a hint?)',
+      optAnanya: 'Ananya (Ambwini su·gipa / Granddaughter)',
+      optMaya: 'Maya (Nobi / Sister)',
+      optDebo: 'Debo (Depante / Son in Bangalore)',
+      seqTitle: 'A·gilsakni Riti Sulsul',
+      seqInstruct: 'Watch and tap leaves at your own pace',
+      cgTitle: 'Minoti’s Daily Wellbeing',
+      cgStatus: 'Steady and Peaceful Rhythm',
+      cgVoiceTitle: 'Regional Voice & Dialect',
+      navHaven: 'Haven',
+      navReminders: 'Reminders',
+      navRecall: 'Recall',
+      navCaregiver: 'Caregiver',
+      audioToast: 'Ananya: Salam Ambwi, cha ding·a tibil kosako donaha.'
+    },
+    lus: {
+      pill: 'Mizo',
+      headerSync: 'Shillong Verandah • Synced',
+      tabPatient: 'Dam Tak Haven',
+      tabCaregiver: 'Caregiver Sanctuary',
+      dayBadge: 'Thawhlehni • Tuesday Morning',
+      heroGreeting: 'Chibai, Pi Minoti',
+      heroSub: 'Good morning Pi Minoti. The hills are quiet and calm this morning.',
+      voiceReady: 'Ananya aw a inpeih e',
+      btnPlay: 'Ngaithla (Play)',
+      reassurance: 'Hmanhmawh a ngai lo, i hun duh zat hmang rawh. I chhungte an awm e.',
+      choicesTitle: 'I thlan theih dam tak (Gentle Choices)',
+      card1Title: 'Vawiin Hun Duang Dam Tak',
+      card1Sub: "Today's Gentle Reminders",
+      card2Title: 'Hmel hriatna fiah',
+      card2Sub: 'Who Is This? Face Recall',
+      card3Title: 'Zia zui rem chan',
+      card3Sub: 'Gentle Nature Sequence Game',
+      card4Title: 'Hriatrengna & Hla Mawi',
+      card4Sub: 'Memory Vault & Morning Chants',
+      remindersTitle: 'Vawiin Hun Duang Dam Tak',
+      remind1Title: 'Thingpui lum leh damdawi',
+      remind2Title: 'Chhuna Chawhlui',
+      remindBtnDone: 'Ka Zo E • Mark as Done',
+      faceTitle: 'He hmel hi i hria em?',
+      faceHint: 'Puihna i duh em? (Need a hint?)',
+      optAnanya: 'Ananya (Tupa / Granddaughter)',
+      optMaya: 'Maya (Farnu / Sister)',
+      optDebo: 'Debo (Fapa / Son in Bangalore)',
+      seqTitle: 'Zia zui rem chan',
+      seqInstruct: 'Watch and tap leaves at your own pace',
+      cgTitle: 'Minoti’s Daily Wellbeing',
+      cgStatus: 'Steady and Peaceful Rhythm',
+      cgVoiceTitle: 'Regional Voice & Dialect',
+      navHaven: 'Haven',
+      navReminders: 'Reminders',
+      navRecall: 'Recall',
+      navCaregiver: 'Caregiver',
+      audioToast: 'Ananya: Chibai Pi, thingpui lum veranda-ah a inpeih e.'
+    },
+    en: {
+      pill: 'English',
+      headerSync: 'Shillong Verandah • Synced',
+      tabPatient: 'Patient Haven',
+      tabCaregiver: 'Caregiver Sanctuary',
+      dayBadge: 'Tuesday Morning • Shillong',
+      heroGreeting: 'Good morning, Minoti Aita',
+      heroSub: 'The sun is gentle on the Shillong hills today. Restful moments await.',
+      voiceReady: "Ananya's voice note is ready",
+      btnPlay: 'Play Note',
+      reassurance: 'No Hurry at All. Take all the quiet time you need. Your loved ones are nearby.',
+      choicesTitle: 'Gentle Choices for You',
+      card1Title: "Today's Gentle Reminders",
+      card1Sub: 'Tulsi tea, herbal drops & morning routine',
+      card2Title: 'Who Is This? Face Recall',
+      card2Sub: 'Loving faces with tender voice clues',
+      card3Title: 'Gentle Nature Sequence Game',
+      card3Sub: 'Leaf, orchid, tea pattern rhythm',
+      card4Title: 'Memory Vault & Morning Chants',
+      card4Sub: 'Shillong pine memories & devotional audio',
+      remindersTitle: "Today's Gentle Reminders",
+      remind1Title: 'Morning Tulsi Tea & Herbal Drops',
+      remind2Title: 'Nutritious Warm Lunch',
+      remindBtnDone: 'Mark as Done',
+      faceTitle: 'Who Is This Smiling Face?',
+      faceHint: 'Need a gentle hint?',
+      optAnanya: 'Ananya (Granddaughter living with you)',
+      optMaya: 'Maya (Younger Sister in Guwahati)',
+      optDebo: 'Debo (Son calling from Bangalore)',
+      seqTitle: 'Gentle Pattern Harmony',
+      seqInstruct: 'Watch and tap leaves at your own pace',
+      cgTitle: 'Minoti’s Daily Wellbeing',
+      cgStatus: 'Steady and Peaceful Rhythm',
+      cgVoiceTitle: 'Regional Voice & Dialect',
+      navHaven: 'Haven',
+      navReminders: 'Reminders',
+      navRecall: 'Recall',
+      navCaregiver: 'Caregiver',
+      audioToast: 'Ananya: Good morning Aita, warm tea is on the veranda.'
+    },
+    hi: {
+      pill: 'हिन्दी',
+      headerSync: 'शिलांग बरामदा • कनेक्टेड',
+      tabPatient: 'Patient Haven',
+      tabCaregiver: 'Caregiver Sanctuary',
+      dayBadge: 'मंगलवार • सुहानी सुबह',
+      heroGreeting: 'नमस्ते, मिनोती आईता',
+      heroSub: 'शुभ प्रभात! शिलांग की पहाड़ियों में आज सुबह बहुत शांत और सुहानी है।',
+      voiceReady: 'अनन्या का प्यार भरा संदेश तैयार है',
+      btnPlay: 'सुनें (Play)',
+      reassurance: 'कोई जल्दबाज़ी नहीं। पूरा समय लें। आपके अपने हमेशा आपके साथ हैं।',
+      choicesTitle: 'आपके लिए सहज विकल्प (Gentle Choices)',
+      card1Title: 'आज की शांत दिनचर्या',
+      card1Sub: "Today's Gentle Reminders",
+      card2Title: 'क्या आप इस चेहरे को पहचानती हैं?',
+      card2Sub: 'Who Is This? Face Recall',
+      card3Title: 'प्रकृति का मधुर क्रम',
+      card3Sub: 'Gentle Nature Sequence Game',
+      card4Title: 'स्मृतियों का संदूक और भजन',
+      card4Sub: 'Memory Vault & Morning Chants',
+      remindersTitle: 'आज की शांत दिनचर्या',
+      remind1Title: 'तुलसी की चाय और नियमित दवा',
+      remind2Title: 'दोपहर का पौष्टिक भोजन',
+      remindBtnDone: 'संपन्न हुआ • Mark as Done',
+      faceTitle: 'क्या आप इस चेहरे को पहचानती हैं?',
+      faceHint: 'क्या आपको एक संकेत चाहिए? (Need a hint?)',
+      optAnanya: 'अनन्या (Ananya - नातिन)',
+      optMaya: 'माया (Maya - छोटी बहन)',
+      optDebo: 'देबो (Debo - पुत्र)',
+      seqTitle: 'प्रकृति का मधुर क्रम',
+      seqInstruct: 'Watch and tap leaves at your own pace',
+      cgTitle: 'Minoti’s Daily Wellbeing',
+      cgStatus: 'Steady and Peaceful Rhythm',
+      cgVoiceTitle: 'Regional Voice & Dialect',
+      navHaven: 'Haven',
+      navReminders: 'Reminders',
+      navRecall: 'Recall',
+      navCaregiver: 'Caregiver',
+      audioToast: 'अनन्या: नमस्ते आईता, बरामदे में गरमा-गरम चाय तैयार है।'
+    }
+  };
+
+  let currentLang = 'as';
+  let currentMode = 'patient';
+  let currentTab = 'haven';
+  let sequenceList = [];
+
+  // Core setLanguage function: iterates over all [data-key] elements
+  function setLanguage(lang) {
+    if (!I18N[lang]) lang = 'as';
+    currentLang = lang;
+    const dict = I18N[lang];
+
+    // Update all matching elements
+    document.querySelectorAll('[data-key]').forEach(el => {
+      const key = el.getAttribute('data-key');
+      if (dict[key]) {
+        el.textContent = dict[key];
+      }
+    });
+
+    // Update Header Pill Label
+    const pill = document.getElementById('langCurrentPill');
+    if (pill) pill.textContent = dict.pill;
+
+    // Update Caregiver Badge and Select
+    const cgBadge = document.getElementById('cgLangBadge');
+    if (cgBadge) {
+      const names = {
+        as: 'অসমীয়া (Assamese)',
+        kha: 'Ka Ktien Khasi (Khasi)',
+        bdo: 'बोड़ो (Bodo)',
+        mni: 'মৈতৈলোন্ (Manipuri)',
+        gro: 'A·chik (Garo)',
+        lus: 'Mizo ṭawng (Mizo)',
+        en: 'English',
+        hi: 'हिन्दी (Hindi)'
+      };
+      cgBadge.textContent = names[lang] || names['as'];
+    }
+    const cgSel = document.getElementById('cgLangDropdown');
+    if (cgSel && cgSel.value !== lang) cgSel.value = lang;
+
+    // Close Modal if open
+    const modal = document.getElementById('langModal');
+    if (modal) modal.classList.add('hidden');
+
+    playVoiceToast(lang);
+  }
+
+  function toggleLangModal() {
+    const modal = document.getElementById('langModal');
+    modal.classList.toggle('hidden');
+  }
+
+  // Navigation & Sub-views
+  function switchTab(tabId) {
+    currentTab = tabId;
+    document.querySelectorAll('.view-panel').forEach(p => p.classList.remove('active'));
+    const target = document.getElementById('panel-' + tabId);
+    if (target) target.classList.add('active');
+
+    // Update nav icons
+    ['haven', 'reminders', 'recall', 'caregiver'].forEach(key => {
+      const btn = document.getElementById('nav-' + key);
+      if (!btn) return;
+      const iconWrap = btn.querySelector('div');
+      const text = btn.querySelector('span');
+      if (key === tabId || (key === 'haven' && (tabId === 'sequence' || tabId === 'vault'))) {
+        btn.className = "flex flex-col items-center gap-0.5 text-brand-800 group";
+        iconWrap.className = "w-10 h-6 rounded-full bg-brand-100 flex items-center justify-center text-brand-800";
+        text.className = "text-[10px] font-bold";
+      } else {
+        btn.className = "flex flex-col items-center gap-0.5 text-hearth-muted group";
+        iconWrap.className = "w-10 h-6 rounded-full flex items-center justify-center";
+        text.className = "text-[10px] font-medium";
+      }
+    });
+
+    document.getElementById('contentScrollArea').scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function switchMode(mode) {
+    currentMode = mode;
+    const patBtn = document.getElementById('btnPatientMode');
+    const cgBtn = document.getElementById('btnCaregiverMode');
+    if (mode === 'patient') {
+      patBtn.className = "flex-1 py-1.5 px-3 rounded-xl font-bold text-xs flex items-center justify-center gap-1.5 transition-all bg-white text-hearth-deepGreen shadow-sm";
+      cgBtn.className = "flex-1 py-1.5 px-3 rounded-xl font-medium text-xs flex items-center justify-center gap-1.5 transition-all text-hearth-muted hover:text-hearth-text";
+      switchTab('haven');
+    } else {
+      cgBtn.className = "flex-1 py-1.5 px-3 rounded-xl font-bold text-xs flex items-center justify-center gap-1.5 transition-all bg-white text-hearth-deepGreen shadow-sm";
+      patBtn.className = "flex-1 py-1.5 px-3 rounded-xl font-medium text-xs flex items-center justify-center gap-1.5 transition-all text-hearth-muted hover:text-hearth-text";
+      switchTab('caregiver');
+    }
+  }
+
+  // Toast Notification
+  function playVoiceToast(lang) {
+    const toast = document.getElementById('voiceToast');
+    const toastText = document.getElementById('voiceToastText');
+    const msg = I18N[lang] ? I18N[lang].audioToast : 'Playing gentle prompt...';
+    toastText.textContent = msg;
+    toast.classList.remove('hidden');
+    setTimeout(() => { toast.classList.add('hidden'); }, 3800);
+  }
+
+  function hideVoiceToast() {
+    document.getElementById('voiceToast').classList.add('hidden');
+  }
+
+  // Interactive Games Helpers
+  function completeReminder(btn) {
+    btn.className = "w-full py-3.5 px-4 bg-emerald-50 border border-emerald-300 text-emerald-800 rounded-2xl font-bold text-xs flex items-center justify-center gap-2";
+    btn.innerHTML = '<span>✓ Done with Warmth</span>';
+  }
+
+  function handleFaceAnswer(isCorrect, btn) {
+    const fb = document.getElementById('faceFeedback');
+    const fbText = document.getElementById('faceFeedbackText');
+    fb.classList.remove('hidden');
+    if (isCorrect) {
+      fbText.textContent = "হয়, এয়া অনন্যা! (Yes, it's Ananya! She is right here.)";
+      fb.className = "p-3 rounded-2xl bg-emerald-50 border border-emerald-200 text-xs text-emerald-900 text-left flex items-center gap-2";
+    } else {
+      fbText.textContent = "A gentle hint: This loving person lives right with you in Shillong.";
+      fb.className = "p-3 rounded-2xl bg-amber-50 border border-amber-200 text-xs text-amber-900 text-left flex items-center gap-2";
+    }
+  }
+
+  function tapSequence(sym) {
+    if (sequenceList.length >= 3) return;
+    sequenceList.push(sym);
+    renderSequence();
+  }
+
+  function resetSequence() {
+    sequenceList = [];
+    renderSequence();
+    document.getElementById('seqSuccess').classList.add('hidden');
+  }
+
+  function renderSequence() {
+    for (let i = 1; i <= 3; i++) {
+      const slot = document.getElementById('slot' + i);
+      if (sequenceList[i - 1]) {
+        slot.textContent = sequenceList[i - 1];
+        slot.className = "h-14 rounded-2xl border-2 border-brand-500 bg-white flex items-center justify-center text-2xl font-bold text-brand-800 shadow-sm";
+      } else {
+        slot.textContent = i;
+        slot.className = "h-14 rounded-2xl border-2 border-dashed border-stone-300 bg-hearth-surface flex items-center justify-center text-xl font-bold text-stone-400";
+      }
+    }
+    if (sequenceList.length === 3) {
+      document.getElementById('seqSuccess').classList.remove('hidden');
+    }
+  }
+
+  // Initial language setup
+  setLanguage('as');
+</script>
+</body></html>

@@ -1,0 +1,121 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "Profile registration for patient and primary caregiver",
+      "type": "object",
+      "properties": {
+        "patientName": { "type": "string" },
+        "patientCallSign": { "type": "string" },
+        "caregiverName": { "type": "string" },
+        "caregiverPhone": { "type": "string" },
+        "emergencyPhone": { "type": "string" },
+        "homeCity": { "type": "string" },
+        "safeZoneLat": { "type": "number" },
+        "safeZoneLng": { "type": "number" },
+        "safeZoneRadiusMeters": { "type": "number" },
+        "language": { "type": "string" },
+        "stage": { "type": "string" },
+        "calmingTriggers": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["patientName", "caregiverName"]
+    },
+    "LocationRecord": {
+      "title": "LocationRecord",
+      "description": "Patient location telemetry and geofence tracking",
+      "type": "object",
+      "properties": {
+        "latitude": { "type": "number" },
+        "longitude": { "type": "number" },
+        "accuracy": { "type": "number" },
+        "address": { "type": "string" },
+        "isWithinSafeZone": { "type": "boolean" },
+        "distanceFromHomeMeters": { "type": "number" },
+        "timestamp": { "type": "string" }
+      },
+      "required": ["latitude", "longitude", "timestamp"]
+    },
+    "CaregiverLog": {
+      "title": "CaregiverLog",
+      "description": "Caregiver observations and daily notes",
+      "type": "object",
+      "properties": {
+        "mood": { "type": "string" },
+        "notes": { "type": "string" },
+        "category": { "type": "string" },
+        "timestamp": { "type": "string" }
+      },
+      "required": ["mood", "notes", "timestamp"]
+    },
+    "VoiceNote": {
+      "title": "VoiceNote",
+      "description": "Recorded familiar voice comfort anchors from family members",
+      "type": "object",
+      "properties": {
+        "speakerName": { "type": "string" },
+        "relation": { "type": "string" },
+        "title": { "type": "string" },
+        "transcript": { "type": "string" },
+        "audioBase64": { "type": "string" },
+        "recordedAt": { "type": "string" }
+      },
+      "required": ["speakerName", "title", "recordedAt"]
+    },
+    "CaregiverCheckin": {
+      "title": "CaregiverCheckin",
+      "description": "Daily caregiver burnout and micro-respite checkin",
+      "type": "object",
+      "properties": {
+        "date": { "type": "string" },
+        "strainScore": { "type": "number" },
+        "energyLevel": { "type": "string" },
+        "emotionalState": { "type": "string" },
+        "notes": { "type": "string" },
+        "timestamp": { "type": "string" }
+      },
+      "required": ["strainScore", "timestamp"]
+    },
+    "SosAlert": {
+      "title": "SosAlert",
+      "description": "Automated SOS emergency alerts and notifications",
+      "type": "object",
+      "properties": {
+        "timestamp": { "type": "string" },
+        "status": { "type": "string" },
+        "contactPhone": { "type": "string" },
+        "patientName": { "type": "string" },
+        "message": { "type": "string" },
+        "latitude": { "type": "number" },
+        "longitude": { "type": "number" }
+      },
+      "required": ["timestamp", "status", "contactPhone"]
+    }
+  },
+  "firestore": {
+    "/profiles/{profileId}": {
+      "schema": "UserProfile",
+      "description": "Patient and caregiver registered profile"
+    },
+    "/locations/{locationId}": {
+      "schema": "LocationRecord",
+      "description": "Live GPS coordinates and safe zone compliance tracking"
+    },
+    "/care_logs/{logId}": {
+      "schema": "CaregiverLog",
+      "description": "Caregiver clinical observation logs"
+    },
+    "/voice_notes/{noteId}": {
+      "schema": "VoiceNote",
+      "description": "Caregiver voice note audio recordings for patient comfort"
+    },
+    "/caregiver_checkins/{checkinId}": {
+      "schema": "CaregiverCheckin",
+      "description": "Caregiver burnout score and micro-respite logs"
+    },
+    "/sos_alerts/{alertId}": {
+      "schema": "SosAlert",
+      "description": "Emergency SOS broadcast alerts logged in real-time"
+    }
+  }
+}

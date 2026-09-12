@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+body {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  background-color: #ECE8DD;
+  color: #222B27;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.font-bengali {
+  font-family: 'Noto Serif Bengali', serif;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+

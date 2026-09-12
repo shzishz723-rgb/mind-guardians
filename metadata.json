@@ -1,0 +1,11 @@
+{
+  "name": "MindSync",
+  "description": "A soothing companion app for dementia care and mental wellbeing with patient haven, caregiver sanctuary, multilingual heart languages, and an AI voice companion.",
+  "requestFramePermissions": [
+    "microphone",
+    "geolocation"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

@@ -1,0 +1,62 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function isValidId(id) {
+      return id is string && id.size() > 0 && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+
+    match /profiles/{profileId} {
+      allow read: if isValidId(profileId);
+      allow write: if isValidId(profileId) 
+        && request.resource.data.patientName is string 
+        && request.resource.data.caregiverName is string;
+    }
+
+    match /locations/{locationId} {
+      allow read: if isValidId(locationId);
+      allow create: if isValidId(locationId)
+        && request.resource.data.latitude is number
+        && request.resource.data.longitude is number;
+      allow update: if isValidId(locationId)
+        && request.resource.data.latitude is number
+        && request.resource.data.longitude is number;
+      allow delete: if false;
+    }
+
+    match /care_logs/{logId} {
+      allow read: if isValidId(logId);
+      allow create: if isValidId(logId)
+        && request.resource.data.mood is string
+        && request.resource.data.notes is string;
+      allow update: if isValidId(logId);
+      allow delete: if isValidId(logId);
+    }
+
+    match /voice_notes/{noteId} {
+      allow read: if isValidId(noteId);
+      allow create: if isValidId(noteId)
+        && request.resource.data.speakerName is string
+        && request.resource.data.title is string;
+      allow update: if isValidId(noteId);
+      allow delete: if isValidId(noteId);
+    }
+
+    match /caregiver_checkins/{checkinId} {
+      allow read: if isValidId(checkinId);
+      allow create: if isValidId(checkinId)
+        && request.resource.data.strainScore is number;
+      allow update: if isValidId(checkinId);
+      allow delete: if isValidId(checkinId);
+    }
+
+    match /sos_alerts/{alertId} {
+      allow read: if isValidId(alertId);
+      allow create: if isValidId(alertId)
+        && request.resource.data.contactPhone is string
+        && request.resource.data.status is string;
+      allow update: if isValidId(alertId);
+      allow delete: if isValidId(alertId);
+    }
+  }
+}
